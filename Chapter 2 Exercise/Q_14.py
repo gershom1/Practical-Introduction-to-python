@@ -1,22 +1,21 @@
 """Use for loops to print a diamond like the one below. Allow the user to specify how high the
-diamond should be.
+Diamond pattern
 
-*
-***
-*****
-*******
-*****
-***
-* """
+# Reading number of row
+row = int(input('Enter number of row: '))
 
-
-# n=eval(input("Enter a number to specify how high you want your triangle: "))
-n=17
-for rows in range (n):
-    for columns in range(0,n-rows-1):
-      print(end="")
-    for columns in range(0,rows+1):
+# Upper part of diamond
+for i in range(1, row+1):
+    for j in range(1,row-i+1):
+        print(" ", end="")
+    for j in range(1, 2*i):
         print("*", end="")
-
     print()
 
+# Lower part of diamond
+for i in range(row-1,0, -1):
+    for j in range(1,row-i+1):
+        print(" ", end="")
+    for j in range(1, 2*i):
+        print("*", end="")
+    print()
